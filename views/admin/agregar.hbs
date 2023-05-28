@@ -1,0 +1,32 @@
+<div class="container mt-5 ml-5 mr-5 w-50">
+    <div class="card text-center">
+    <div class="card-header">
+        Agrega un nuevo transporte
+    </div>
+    <div class="card-body">
+        <form action="/admin/novedades/agregar" method="post">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="titulo" placeholder="Título" name="titulo">
+            </div>
+
+            <div class="mb-3">
+                <textarea class="form-control" id="subtitulo" row="3" placeholder="Subtitulo" name="subtitulo"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <textarea class="form-control" id="cuerpo" row="5" placeholder="Cuerpo" name="cuerpo"></textarea>
+            </div>
+
+            <div class="mb-3 d-flex">
+                <button type="submit" class="btn btn-success btn-sm">Guardar </button>
+            </div>
+        </form>
+        {{#if error}}
+            <div class="alert alert-danger" role="alert">
+            {{message}}
+            </div>
+        {{/if}}
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.menu {
+  background-color: #212529;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transportes {
+  display: flex;
+  font-size: 25px;
+  margin-left: 10%;
+}
+
+.transportes a {
+  color: white;
+  text-decoration: none;
+  padding: 3px 6px;
+}
+
+div p {
+  display: flex;
+  color: gray;
+  font-size: 12px;
+  position: relative;
+  left: -20px;
+  top: 8px;
+}

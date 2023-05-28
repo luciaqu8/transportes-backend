@@ -1,0 +1,57 @@
+<div class="container p-5">
+
+  {{!-- Fila 1 --}}
+  <div class="row mb-5">
+    <h1 class="fs-6 text-end">Hola {{usuario}}!
+        <a href="/admin/login/logout" class="btn btn-danger btn-sm">Salir</a>
+    </h1>
+  </div>
+  {{!-- Fin Fila 1 --}}
+
+  {{!-- Fila 2 --}}
+  <div class="row">
+    <div class="col-7 mb-4">
+      <h5>Listado de nuevos transportes</h5>
+      
+    </div>
+
+    <div class="col-5 text-end">
+      <a class="btn btn-success btn-sm" href="/admin/novedades/agregar">Agregar</a>
+    </div>
+  </div>
+  {{!-- Fin Fila 2 --}}
+
+  {{!-- Fila 3 --}}
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+
+            <th class="text-end">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each novedades}}
+          <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{titulo}}</td>
+            <td class="text-end d-grid gap-2 d-md-flex justify-content-md-end">
+              <a href="/admin/novedades/editar/{{id}}" class="btn btn-secondary btn-sm">Editar</a>
+              <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-danger btn-sm">Borrar</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+  {{!-- Fin Fila 3 --}}
+
+
+</div>

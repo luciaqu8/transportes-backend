@@ -1,0 +1,42 @@
+<div class="container mt-5 ml-5 mr-5 w-50">
+    <div class="card text-center">
+    <div class="card-header">
+        Modifica la entrada
+    </div>
+    <div class="card-body">
+        <form method="post" action="/admin/novedades/editar/">
+              <div class="mb-3 row">
+                <label for="ID" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-10">
+                <input class="form-control" name="id" type="text" value="{{novedad.id}}" disabled readonly />
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="titulo" class="form-label fw-bold">Título</label>
+                <input type="text" class="form-control" name="titulo" value="{{novedad.titulo}}" />
+            </div>
+
+            <div class="mb-3">
+                <label for="subtitulo" class="form-label fw-bold">Subtitulo</label>
+                <textarea class="form-control" row="3" name="subtitulo">{{novedad.subtitulo}}</textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="cuerpo" class="form-label fw-bold">Cuerpo</label>
+                <textarea class="form-control" row="5" name="cuerpo">{{novedad.cuerpo}}</textarea>
+            </div>
+
+            <div class="mb-3 d-flex">
+                <button type="submit" class="btn btn-success btn-sm">Guardar </button>
+            </div>
+        </form>
+        {{#if error}}
+            <div class="alert alert-danger" role="alert">
+            {{message}}
+            </div>
+        {{/if}}
+
+        </div>
+    </div>
+</div>

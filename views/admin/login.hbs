@@ -1,0 +1,26 @@
+<div class="container mt-5 ml-5 mr-5 w-50">
+    <div class="card text-center">
+    <div class="card-header">
+        Inicia sesión
+    </div>
+    <div class="card-body">
+        <form action="/admin/login" method="post">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="inputUser" placeholder="Escribe tu usuario" name="usuario">
+            </div>
+                <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Escribe tu contraseña" name="password">
+            </div>
+
+            <div class="mb-3 d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn btn-dark d-flex align-items-center justify-content-center">Entra > </button>
+            </div>
+        </form>
+
+        {{#if error }}
+            <p class="mb-3 d-flex align-items-center justify-content-center">Usuario y/o contraseña incorrectos</p>
+        {{/if}}
+    </div>
+</div>
