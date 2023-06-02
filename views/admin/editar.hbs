@@ -4,11 +4,12 @@
         Modifica la entrada
     </div>
     <div class="card-body">
-        <form method="post" action="/admin/novedades/editar/">
+        <form method="post" action="/admin/novedades/editar" enctype="multipart/form-data">
               <div class="mb-3 row">
                 <label for="ID" class="col-sm-2 col-form-label">ID</label>
                 <div class="col-sm-10">
                 <input class="form-control" name="id" type="text" value="{{novedad.id}}" disabled readonly />
+                 <input type="hidden" name="id" value="{{novedad.id}}" >
                 </div>
             </div>
             
@@ -25,6 +26,20 @@
             <div class="mb-3">
                 <label for="cuerpo" class="form-label fw-bold">Cuerpo</label>
                 <textarea class="form-control" row="5" name="cuerpo">{{novedad.cuerpo}}</textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="imagen">Imagen</label>
+                <input type="file" class="form-control" name="imagen" id="imagen" />
+            </div>
+            <div class="mb-3">
+                <div class="form-check form-check-reverse">
+                <input class="form-check-input" type="checkbox" name="img_delete" id="img_delete" value="1">
+                <label class="form-check-label" for="img_delete">
+                    ¿Eliminar imagen?
+                <input type="hidden" name="img_original" value="{{novedad.img_id}}" />
+                </label>
+                </div>
             </div>
 
             <div class="mb-3 d-flex">
